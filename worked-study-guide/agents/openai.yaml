@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worked Study Guide"
+  short_description: "Worked homework guides with derivations and diagrams"
+  default_prompt: "Use $worked-study-guide to create an HTML study guide for the homework or lesson in this folder, with source images, knowns, governing equations, assumptions, and worked solutions."
