@@ -7,6 +7,12 @@ description: Create worked study guides from homework, lesson questions, screens
 
 Create a study companion that teaches how to start and solve every assigned problem. The user's established preference is a self-contained HTML file, with source images where available and explicit derivations before substitution. Follow newer user instructions when they change this format.
 
+## Lead responsibility and bounded delegation
+
+Read [references/delegation-and-review.md](references/delegation-and-review.md) before planning support work and use its model assignments, task boundaries, and review limits. Prefer lower-cost agents for independent extraction, transcription, source navigation, and numeric checks. Keep short or dependent steps with the lead. The lead owns engineering reasoning, source and property selection, final explanations, and acceptance or rejection of findings.
+
+For technically involved guides, the intended lead is GPT-6.1 Sol at High effort or stronger. Use model overrides only when supported by the active environment; disclose relevant capability limits rather than claiming to switch the lead model. Allow at most two delegated agents at once, no nested delegation, and one narrowed retry only for a missing, malformed, or explicitly incomplete result. Reviewers report findings; only the lead edits the guide and its source files.
+
 ## Find the assignment and sources
 
 1. Inspect the specified folder and applicable local instructions. Inventory all questions and subparts, including required plots, sketches, proofs, and alternate solution methods. Inspect a previous guide when referenced; use it for style, not as authority for a new answer.
@@ -47,6 +53,8 @@ Use [assets/guide_template.html](assets/guide_template.html) and [scripts/build_
 - Never substitute generated imagery for an original textbook problem, measured chart, or property table.
 
 ## Check and finish
+
+After a complete draft exists, follow the review sequence in [references/delegation-and-review.md](references/delegation-and-review.md): one GPT-6.1 Sol/High technical audit, one GPT-6 Luna/Medium learner clarity audit, and one lead resolution pass. Verify each finding against the assignment, sources, and calculations; keep a compact findings-and-dispositions log in `guide_source`. Do not repeat audits to seek agreement. The only additional review allowed is one narrowly scoped GPT-6 Astra/High escalation under the reference's criteria. Finish when coverage is complete and findings are resolved or explicitly recorded with their impact.
 
 Verify calculations using an independent relation where practical: conservation residuals, dimensional consistency, numerical integration, alternate energy balances, or stress-tensor eigenvalues. Check special cases that could expose a sign or frame error. Do not merely compare two copies of the same formula.
 
